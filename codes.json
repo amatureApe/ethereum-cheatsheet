@@ -162,5 +162,264 @@
       "a ** b": "integer result of the exponential operation modulo 2^256."
     },
     "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "OB",
+    "name": "SIGNEXTEND",
+    "mingas": "5",
+    "since": "frontier",
+    "group": "stop&arithmetic",
+    "input": {
+      "b": "size in byte -1 of the integer to sign extend.",
+      "x": "integer value to sign extend."
+    },
+    "output": {
+      "y": "integer result of the sign extend."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "10",
+    "name": "LT",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "comparison&bitwise",
+    "input": {
+      "a": "left side integer.",
+      "b": "right side integer."
+    },
+    "output": {
+      "a < b": "1 if the left side is smaller, 0 otherwise."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "11",
+    "name": "GT",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "comparison&bitwise",
+    "input": {
+      "a": "left side integer.",
+      "b": "right side integer."
+    },
+    "output": {
+      "a > b": "1 if the left side is bigger, 0 otherwise."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "12",
+    "name": "SLT",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "comparison&bitwise",
+    "notes": "All values are treated as two's complement signed 256-bit integers.",
+    "input": {
+      "a": "left side signed integer",
+      "b": "right side signed integer."
+    },
+    "output": {
+      "a < b": "1 if the left side is smaller, 0 otherwise."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "13",
+    "name": "SGT",
+    "mingas": "6",
+    "since": "frontier",
+    "group": "comparison&bitwise",
+    "notes": "All values are treated as two's complements signed 256-bit integers.",
+    "input": {
+      "a": "left side signed integer.",
+      "b": "right side signed integer."
+    },
+    "output": {
+      "a < b": "1 if the left side is bigger, 0 otherwise."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "14",
+    "name": "EQ",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "comparison&bitwise",
+    "input": {
+      "a": "left side integer.",
+      "b": "right side integer."
+    },
+    "output": {
+      "a == b": "1 if the left side equal to the right side, 0 otherwise"
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "15",
+    "name": "ISZERO",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "comparison&bitwise",
+    "input": {
+      "a": "integer."
+    },
+    "output": {
+      "a == 0": "1 if a is 0, 0 otherwise."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "16",
+    "name": "AND",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "comparison&bitwise",
+    "input": {
+      "a": "first brinary value.",
+      "b": "second binary value."
+    },
+    "output": {
+      "a & b": "the bitwise AND result."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "17",
+    "name": "OR",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "comparison&bitwise",
+    "input": {
+      "a": "first brinary value.",
+      "b": "second binary value."
+    },
+    "output": {
+      "a | b": "the bitwise OR result."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "18",
+    "name": "XOR",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "comparison&bitwise",
+    "input": {
+      "a": "first brinary value.",
+      "b": "second binary value."
+    },
+    "output": {
+      "a ^ b": "the bitwase XOR result."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "19",
+    "name": "NOT",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "comparison&bitwise",
+    "input": {
+      "a": "binary value."
+    },
+    "output": {
+      "~a": "the bitwase NOT result."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "1A",
+    "name": "BYTE",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "comparison&bitwise",
+    "input": {
+      "i": "byte offset starting from the most significant bytes.",
+      "x": "32-bytes value."
+    },
+    "output": {
+      "y": "the indicated bytes at the least significant position. If the bytes offset is out of range, the result is 0."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "1B",
+    "name": "SHL",
+    "mingas": "3",
+    "since": "constantinople",
+    "group": "comparison&bitwise",
+    "notes": "Shift the bits towards the most significant one. The bits moved after the 256th one are discarded, the new bits are set to 0.",
+    "input": {
+      "shift": "number of bits to shift to the left.",
+      "value": "32 bytes to shift."
+    },
+    "output": {
+      "value << shift": "the shifted value. If shift is bigger than 255, returns 0."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "1C",
+    "name": "SHR",
+    "mingas": "3",
+    "since": "constantinople",
+    "group": "comparison&bitwise",
+    "notes": "Shifts the bit towards the least significant one. The bits moved before the first one are discarded, the new bits are set to 0.",
+    "input": {
+      "shift": "number of bits to shift to the right.",
+      "value": "32 bytes to shift."
+    },
+    "output": {
+      "value >> shift": "the shifted value. If shift is bigger than 255, returns 0."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcodes": "1D",
+    "name": "SAR",
+    "mingas": "3",
+    "since": "constantinople",
+    "group": "comparison&bitwise",
+    "notes": "Shift the bits towards the least significant one. The bits moved before the first one are discarded, the new bits are set to 0 if the previous most significant bit was 0, otherwise the new bits are set to 1.",
+    "input": {
+      "shift": "number of bits to shift to the right.",
+      "value": "integer to shift."
+    },
+    "output": {
+      "value >> shift": "the shifted value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "20",
+    "name": "SHA3",
+    "mingas": "30",
+    "since": "frontier",
+    "group": "SHA3",
+    "input": {
+      "offset": "byte offset in the memory.",
+      "size": "byte size to read in the memory."
+    },
+    "output": {
+      "hash": "Keccak-256 hash of the given data in memory."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.",
+    "gas": {
+      "minimum_word_size": "(size + 31) / 32",
+      "static_gas": "30",
+      "dynamic_gas": "6 * minimum_word_size + memory_expansion_cost"
+    }
+  },
+  {
+    "opcode": "30",
+    "name": "ADDRESS",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "environmentalinfo",
+    "output": {
+      "address": "the 20-byte address of the current account."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
   }
 ]
