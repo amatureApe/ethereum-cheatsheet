@@ -944,5 +944,844 @@
       "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
     },
     "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "62",
+    "name": "PUSH3",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for the specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed would have to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "63",
+    "name": "PUSH4",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The value for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed would have to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "64",
+    "name": "PUSH5",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "65",
+    "name": "PUSH6",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "66",
+    "name": "PUSH7",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "67",
+    "name": "PUSH8",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "68",
+    "name": "PUSH9",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "69",
+    "name": "PUSH10",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "6A",
+    "name": "PUSH11",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "6B",
+    "name": "PUSH12",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "6C",
+    "name": "PUSH13",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "6D",
+    "name": "PUSH14",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "6E",
+    "name": "PUSH15",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "6F",
+    "name": "PUSH16",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "70",
+    "name": "PUSH17",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "71",
+    "name": "PUSH18",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "72",
+    "name": "PUSH19",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "73",
+    "name": "PUSH20",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "74",
+    "name": "PUSH21",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "75",
+    "name": "PUSH22",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "76",
+    "name": "PUSH23",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "77",
+    "name": "PUSH24",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "78",
+    "name": "PUSH25",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "79",
+    "name": "PUSH26",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "7A",
+    "name": "PUSH27",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "7B",
+    "name": "PUSH28",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "7C",
+    "name": "PUSH29",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "7D",
+    "name": "PUSH30",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "7E",
+    "name": "PUSH31",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "7F",
+    "name": "PUSH32",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed woul dhave to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "80",
+    "name": "DUP1",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "value": "value to duplicate."
+    },
+    "output": {
+      "a": "duplicated value.",
+      "b": "orignal value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "81",
+    "name": "DUP2",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "a": "ignored value.",
+      "b": "value to duplicate."
+    },
+    "output": {
+      "a": "duplicated value.",
+      "b": "ignored value.",
+      "c": "original value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "82",
+    "name": "DUP3",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "a": "ignored value.",
+      "b": "ignored value.",
+      "c": "value to duplicate."
+    },
+    "output": {
+      "c": "duplicated value.",
+      "a": "ignored value.",
+      "b": "ignored value.",
+      "d": "original value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "83",
+    "name": "DUP4",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "1": "ignored value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "value": "value to duplicate."
+    },
+    "output": {
+      "a": "duplicated value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "b": "origial value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "84",
+    "name": "DUP5",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "1": "ignored value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "value": "value to duplicate."
+    },
+    "output": {
+      "a": "duplicated",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "b": "original value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "85",
+    "name": "DUP6",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "1": "ignored value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "value": "value to duplicate"
+    },
+    "output": {
+      "a": "duplicated value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "b": "original value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "86",
+    "name": "DUP7",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "1": "ignored value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "value": "value to duplicate."
+    },
+    "output": {
+      "a": "duplicated value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "b": "original value."
+    },
+    "errors": "The state changes done by the current are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "87",
+    "name": "DUP8",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "1": "ignored value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "value": "value to duplicate"
+    },
+    "output": {
+      "a": "duplicated value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "b": "original value."
+    },
+    "errors": "The state changes done by the current are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "88",
+    "name": "DUP9",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "1": "ignored value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "value": "value to duplicate"
+    },
+    "output": {
+      "a": "duplicated value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "b": "original value."
+    },
+    "errors": "The state changes done by the current are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "89",
+    "name": "DUP10",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "1": "ignored value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "value": "value to duplicate"
+    },
+    "output": {
+      "a": "duplicated value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "b": "original value."
+    },
+    "errors": "The state changes done by the current are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "8A",
+    "name": "DUP11",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "1": "ignored value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "value": "value to duplicate"
+    },
+    "output": {
+      "a": "duplicated value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "b": "original value."
+    },
+    "errors": "The state changes done by the current are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "8B",
+    "name": "DUP12",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "1": "ignored value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "value": "value to duplicate"
+    },
+    "output": {
+      "a": "duplicated value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "b": "original value."
+    },
+    "errors": "The state changes done by the current are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "8C",
+    "name": "DUP13",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "1": "ignored value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "value": "value to duplicate"
+    },
+    "output": {
+      "a": "duplicated value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "13": "ignored value.",
+      "b": "original value."
+    },
+    "errors": "The state changes done by the current are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "8D",
+    "name": "DUP14",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "1": "ignored value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "13": "ignored value.",
+      "value": "value to duplicate"
+    },
+    "output": {
+      "a": "duplicated value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "13": "ignored value.",
+      "14": "ignored value.",
+      "b": "original value."
+    },
+    "errors": "The state changes done by the current are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "8E",
+    "name": "DUP15",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "1": "ignored value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "13": "ignored value.",
+      "14": "ignored value.",
+      "value": "value to duplicate"
+    },
+    "output": {
+      "a": "duplicated value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "13": "ignored value.",
+      "14": "ignored value.",
+      "15": "ignored value.",
+      "b": "original value."
+    },
+    "errors": "The state changes done by the current are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "8F",
+    "name": "DUP16",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "duplicationops",
+    "input": {
+      "1": "ignored value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "13": "ignored value.",
+      "14": "ignored value.",
+      "15": "ignored value.",
+      "value": "value to duplicate"
+    },
+    "output": {
+      "a": "duplicated value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "13": "ignored value.",
+      "14": "ignored value.",
+      "15": "ignored value.",
+      "b": "original value."
+    },
+    "errors": "The state changes done by the current are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
   }
 ]
