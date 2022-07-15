@@ -684,5 +684,265 @@
       "blockNumber": "current block number."
     },
     "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "44",
+    "name": "DIFFICULTY",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "blockinfo",
+    "output": {
+      "difficulty": "current block difficulty"
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "45",
+    "name": "GASLIMIT",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "blockinfo",
+    "output": {
+      "gasLimit": "gas limit."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "46",
+    "name": "CHAINID",
+    "mingas": "2",
+    "since": "istanbul",
+    "group": "blockinfo",
+    "notes": {
+      "1": "Mainnet",
+      "3": "Ropsten",
+      "4": "Rinkeby",
+      "5": "Goerli",
+      "6": "Kotti",
+      "61": "Classic",
+      "63": "Mordor",
+      "212": "Astor",
+      "2018": "Dev"
+    },
+    "output": {
+      "chainId": "chain id of the network."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "47",
+    "name": "SELFBALANCE",
+    "mingas": "5",
+    "since": "istanbul",
+    "group": "blockinfo",
+    "notes": "Semantically equivalent of calling BALANCE with ADDRESS as paramater, but with a reduced gas cost.",
+    "output": {
+      "balance": "balance of the current account in wei."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "48",
+    "name": "BASEFEE",
+    "mingas": "2",
+    "since": "london",
+    "group": "blockinfo",
+    "output": {
+      "baseFee": "base fee in wei."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "50",
+    "name": "POP",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "stack&flow",
+    "input": {
+      "y": "a stack item."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "51",
+    "name": "MLOAD",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "stack&flow",
+    "input": {
+      "offset": "offset in the memory in bytes."
+    },
+    "output": {
+      "value": "the 32 bytes in memory starting at that offset. If it goes beyond its current size, writes 0s."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.",
+    "gas": {
+      "static_gas": "3",
+      "dynamic_gas": "memory_expansion_cost"
+    }
+  },
+  {
+    "opcode": "52",
+    "name": "MSTORE",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "stack&flow",
+    "input": {
+      "offset": "offset in the memory in bytes.",
+      "value": "32-byte value to write in the memory."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.",
+    "gas": {
+      "static_gas": "3",
+      "dynamic_gas": "memory_expansion_cost"
+    }
+  },
+  {
+    "opcode": "53",
+    "name": "MSTORE8",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "stack&flow",
+    "input": {
+      "offset": "offset in the memory in bytes.",
+      "value": "1-byte value to write in the memory (the least significant byte of the 32-byte stack value)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.",
+    "gas": {
+      "static_gas": "3",
+      "dynamic_gas": "memory_expansion_cost"
+    }
+  },
+  {
+    "opcode": "54",
+    "name": "SLOAD",
+    "mingas": "100",
+    "since": "frontier",
+    "group": "stack&flow",
+    "input": {
+      "key": "32-byte key in storage."
+    },
+    "output": {
+      "value": "32-byte value corresponding to that key. 0 if that key was never written before."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.",
+    "gas": "The static cost is 0. If the accessed address is warm, the dynamic cost is 100. Otherwise the dynamic cost is 2100."
+  },
+  {
+    "opcode": "55",
+    "name": "SSTORE",
+    "mingas": "100",
+    "since": "frontier",
+    "group": "stack&flow",
+    "input": {
+      "key": "32-byte key in storage.",
+      "value": "32-byte value to store."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nThe current exeuction context is from a STATICCALL (since Byzantium fork).",
+    "gas": {
+      "definitions": {
+        "value": "value from the stack input.",
+        "current_value": "current value of the storage slot.",
+        "original_value": "value of the storage slot before the current transaction."
+      },
+      "static_gas": "0",
+      "logic": "if (value == current_value) { if (key is warm) { base_dynamic_gas = 100 } else { base_dynamic_gas = 100 } else if } else if (current_value == original_value) { if (original_value == 0) { base_dynamic_gas = 20000 } else { base_dynamic_gas = 2900 } } else { base_dynamic_gas = 100 }",
+      "notes": "Additionally, 2100 is added to the base_dynamic_gas if the slot is cold."
+    },
+    "refunds": {
+      "logic": "if(value!=current_value){if(current_value==original_value){if(original_value!=0andvalue==0){gas_refunds+=4800}}else{if(original_value!=0){if(current_value==0){gas_refunds-=4800}elseif(value==0){gas_refunds+=4800}}if(value==original_value){if(original_value==0){if(keyiswarm){gas_refunds+=20000-100}else{gas_refunds+=19900}}else{if(keyiswarm){gas_refunds+=5000-2100-100}else{gas_refunds+=4900}}}}}"
+    }
+  },
+  {
+    "opcode": "56",
+    "name": "JUMP",
+    "mingas": "8",
+    "since": "frontier",
+    "group": "stack&flow",
+    "notes": "The program counter is a byte offset in the deployed code. It indicates which instruction will be executed next. When an ADD is executed, for example, the PC is incremented by 1, since the instruction is 1 byte. The  PUSH instruction are bigger than one byte, and so will increment the counter accordingly.\n\nThe JUMP instruction alters the program counter, thus breaking the linear path of the execution to another point in the deployed code. It is used to implement functionalities like functions.",
+    "input": {
+      "counter": "byte offset in the deployed code where execution will continue from. Must be a JUMPDEST instruction."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nCounter offset is not a JUMPDEST. The error is generated even if the JUMP would not have been done."
+  },
+  {
+    "opcode": "57",
+    "name": "JUMPI",
+    "mingas": "10",
+    "since": "frontier",
+    "group": "stack&flow",
+    "notes": "The program counter (PC) is a byte offset in the deployed code. It indicates which instruction will be executed next. When an ADD is executed, for example, the PC is incremented by 1, since the instruction is 1 byte. The PUSH instructions are bigger than one byte, so will increment the counter accordingly.\n\nThe JUMPI instruction may alter the program counter, thus breaking the linear path of the execution to another point in the deployed code. It is used to implement functionalities like loops and conditions.",
+    "input": {
+      "counter": "byte offset in the deployed code where execution will continue from. Must be a JUMPDEST instruction.",
+      "b": "the program counter will be altered with the new value only if this value is different from 0. Otherwise, the program counter is simply incremented and the next instruction will be executed.",
+      "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nCounter offset is not a JUMPDEST. The error is generated only if the JUMP would have been done."
+    }
+  },
+  {
+    "opcode": "58",
+    "name": "PC",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "stack&flow",
+    "notes": "The program counter is a byte offset in the deployed code. It indicates which instruction will be executed next. When an ADD is executed, for example, the PC is incremented by 1, since the instruction is 1 byte. The PUSH instructions are bigger than one byte, and so will increment the counter accordingly",
+    "output": {
+      "counter": "Program counter of this instruction is the current program."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "59",
+    "name": "MSIZE",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "stack&flow",
+    "notes": "The memory is always fully accessible. What this instruction tracks is the highest offset that was accessed in the current exeuction. A first write or read to a bigger offset will trigger a memory expansion, which will cost gas. The size is always a multiple of a word (32 bytes).",
+    "output": {
+      "size": "current memory size in bytes (higher offset accessed until now + 1)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "5A",
+    "name": "GAS",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "stack&flow",
+    "output": {
+      "gas": "remaining gas (after this instruction)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "5B",
+    "name": "JUMPDEST",
+    "mingas": "1",
+    "since": "frontier",
+    "group": "stack&flow",
+    "notes": "Mark a valid destination for JUMP or JUMPI. This operation has no effect on machine state during execution."
+  },
+  {
+    "opcode": "60",
+    "name": "PUSH1",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indices. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed would have to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "61",
+    "name": "PUSH2",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "pushops",
+    "notes": "The new value is put on top of the stack, incrementing all the other value indicies. The values for a specific opcode thus have to be pushed in reverse order of the stack. For example, with MSTORE, the first value pushed would have to be value, and then offset.",
+    "output": {
+      "value": "pushed value, aligned to the right (put in the lowest significant bytes)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
   }
 ]
