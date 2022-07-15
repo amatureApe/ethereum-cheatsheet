@@ -51,5 +51,116 @@
       "a - b": "integer result of the subtraction modulo 2^256"
     },
     "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "04",
+    "name": "DIV",
+    "mingas": "5",
+    "since": "frontier",
+    "group": "stop&arithmetic",
+    "input": {
+      "a": "integer numerator.",
+      "b": "integer denominator."
+    },
+    "output": {
+      "a / b": "integer result of the integer division. If the denominator is 0, the result will be 0."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "05",
+    "name": "SDIV",
+    "mingas": "5",
+    "since": "frontier",
+    "group": "stop&arithmetic",
+    "notes": "All values are treated as two's complement signed 256-bit integers. Note the overflow semantic when -2^256 is negated.",
+    "input": {
+      "a": "integer numerator.",
+      "b": "integer denominator."
+    },
+    "output": {
+      "a / b": "integer result of the signed integer division. If the denominator is 0, the result will be 0."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "06",
+    "name": "MOD",
+    "mingas": "5",
+    "since": "frontier",
+    "group": "stop&arithmetic",
+    "input": {
+      "a": "integer numerator.",
+      "b": "integer denominator."
+    },
+    "output": {
+      "a % b": "integer result of the integer modulo. If the denominator is 0, the result will be 0."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "07",
+    "name": "SMOD",
+    "mingas": "5",
+    "since": "frontier",
+    "group": "stop&arithmetic",
+    "notes": "All values are treated as two's complement signed 256-bit integers. Note the overflow semantic when -2^256 is negated.",
+    "input": {
+      "a": "integer numerator.",
+      "b": "integer denominator."
+    },
+    "output": {
+      "a % b": "integer result of the signed integer modulo. If the denominator is 0, the result will be 0."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "08",
+    "name": "ADDMOD",
+    "mingas": "8",
+    "since": "frontier",
+    "group": "stop&arithmetic",
+    "notes": "All intermediate calculations of this operation are not subject to the 2^256 modulo.",
+    "input": {
+      "a": "first integer value to add.",
+      "b": "second integer value to add.",
+      "N": "integer denominator."
+    },
+    "output": {
+      "(a + b) % N": "integer result of the addition followed by a modulo. If the denominator is 0, the result will be 0."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "09",
+    "name": "MULMOD",
+    "mingas": "8",
+    "since": "frontier",
+    "group": "stop&arithmetic",
+    "notes": "All intermediate calculations of this operation are not subject to the 2^256 modulo.",
+    "input": {
+      "a": "the first integer value to multiply.",
+      "b": "second integer value to multiply.",
+      "N": "integer denominator."
+    },
+    "output": {
+      "(a * b) % N": "integer result of the multiplication followed by a modulo. If the denominator is 0, the result will be 0."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "0A",
+    "name": "EXP",
+    "mingas": "10",
+    "since": "frontier",
+    "group": "stop&arithmetic",
+    "input": {
+      "a": "integer base.",
+      "b": "integer exponent."
+    },
+    "output": {
+      "a ** b": "integer result of the exponential operation modulo 2^256."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
   }
 ]
