@@ -1,0 +1,55 @@
+[
+  {
+    "opcode": "00",
+    "name": "STOP",
+    "mingas": "0",
+    "since": "frontier",
+    "group": "stop&arithmetic",
+    "notes": "Exits the current context successfully.\n\nWhen a call is executed on an address with no code and the EVM tries to read the code data, the default value is returned, 0, which corresponds to the this instruction and halts the execution."
+  },
+  {
+    "opcode": "01",
+    "name": "ADD",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "stop&arithmetic",
+    "input": {
+      "a": "first integer value to add",
+      "b": "second integer value to add"
+    },
+    "output": {
+      "a + b": "integer result of the addition modulo 2^256."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "02",
+    "name": "MUL",
+    "mingas": "5",
+    "since": "frontier",
+    "group": "stop&arithmetic",
+    "input": {
+      "a": "first integer value to multiply.",
+      "b": "second integer value to multiply."
+    },
+    "output": {
+      "a * b": "integer result of the multiplication modulo 2^256."
+    },
+    "errors": "The state changes done by the current context are reverted int he following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "03",
+    "name": "SUB",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "stop&arithmetic",
+    "input": {
+      "a": "first integer value.",
+      "b": "integer value to subtract from the first."
+    },
+    "output": {
+      "a - b": "integer result of the subtraction modulo 2^256"
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  }
+]
