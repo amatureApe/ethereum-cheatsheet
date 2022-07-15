@@ -421,5 +421,268 @@
       "address": "the 20-byte address of the current account."
     },
     "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "31",
+    "name": "BALANCE",
+    "mingas": "100",
+    "since": "frontier",
+    "group": "environmentalinfo",
+    "input": {
+      "address": "the 20-byte address of the current account."
+    },
+    "output": {
+      "balance": "balance of the given account in wei. Returns 0 if the account doesn't exist."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.",
+    "gas": "The static cost is 0. if the accessed address is warm, the dynamic cost is 100. Otherwise the dynamic cost is 2600."
+  },
+  {
+    "opcode": "32",
+    "name": "ORIGIN",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "environmentalinfo",
+    "output": {
+      "address": "the 20-byte address of the sender of the transaction. It can only be an account without code."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "33",
+    "name": "CALLER",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "environmentalinfo",
+    "output": {
+      "address": "the 20-byte address of the caller account. This is the account that did the last call (except delegate call)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "34",
+    "name": "CALLVALUE",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "environmentalinfo",
+    "output": {
+      "value": "the value of the current call in wei."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "35",
+    "name": "CALLDATALOAD",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "environmentalinfo",
+    "input": {
+      "i": "byte offset in the calldata."
+    },
+    "output": {
+      "data[i]": "32-byte value starting from the given offset of the calldata. All bytes after end of the calldata are set to 0."
+    },
+    "gas": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "36",
+    "name": "CALLDATASIZE",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "environmentalinfo",
+    "output": {
+      "size": "byte size of the calldata."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "37",
+    "name": "CALLDATACOPY",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "environmentalinfo",
+    "notes": "For out of bound bytes, 0s will be copied",
+    "input": {
+      "destOffset": "byte offset in the memory where the result will be copied.",
+      "offset": "byte offset in the calldata to copy.",
+      "size": "byte size to copy."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.",
+    "gas": {
+      "minimum_word_size": "(size + 31) / 32",
+      "static_gas": "3",
+      "dynamic_gas": "3 * minimum_word_size + memory_expansion_cost"
+    }
+  },
+  {
+    "opcode": "38",
+    "name": "CODESIZE",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "environmentalinfo",
+    "notes": "Each instruction occupies on byte. In the case of a PUSH instruction, the bytes that need to be pushed are encoded after that, it thus increases the codesize accordingly.",
+    "output": {
+      "size": "byte size of the code."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "39",
+    "name": "CODECOPY",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "environmentalinfo",
+    "notes": "For out of bounds bytes, 0s will be copied.",
+    "input": {
+      "destOffset": "byte offset in the memory where the result will be copied.",
+      "offset": "byte offset in the code to copy.",
+      "size": "byte size to copy."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.",
+    "gas": {
+      "minimum_word_size": "(size + 31) / 32",
+      "static_gas": "3",
+      "dynamic_gas": "3 * minimum_word_size + memory_expansion_cost"
+    }
+  },
+  {
+    "opcode": "3A",
+    "name": "GASPRICE",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "environmentalinfo",
+    "output": {
+      "price": "gas price in wei per gas."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "3B",
+    "name": "EXTCODESIZE",
+    "mingas": "100",
+    "since": "frontier",
+    "group": "environmentalinfo",
+    "input": {
+      "address": "20-byte address of the contract to query."
+    },
+    "output": {
+      "size": "byte size of the code."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.",
+    "gas": "The static cost is 0. If the accessed address is warm, the dynamic cost is 100. Otherwise the dynamic cost is 2600."
+  },
+  {
+    "opcode": "3C",
+    "name": "EXTCODECOPY",
+    "mingas": "100",
+    "since": "frontier",
+    "group": "environmentalinfo",
+    "notes": "For out of bounds bytes, 0s will be copied.",
+    "input": {
+      "address": "20-byte address of the contract to query.",
+      "destOffset": "byte offset in the memory where the result will be copied.",
+      "offset": "byte offset in the code to copy.",
+      "size": "byte size to copy."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.",
+    "gas": {
+      "minimum_word_size": "(size + 31) / 32",
+      "static_gas": "0",
+      "dynamic_gas": "3 * minimum_word_size + memory_expansion_cost + address_access_cost",
+      "notes": "If the accessed address is warm, address_access_cost is 100, otherwise it is 2600."
+    }
+  },
+  {
+    "opcode": "3D",
+    "name": "RETURNDATASIZE",
+    "mingas": "2",
+    "since": "byzantium",
+    "group": "environmentalinfo",
+    "notes": "A sub context can be created with CALL, CALLCODE, DELEGATECALL, or STATICCALL",
+    "output": {
+      "size": "byte size of the return data from the last executed sub context."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "3E",
+    "name": "RETURNDATACOPY",
+    "mingas": "3",
+    "since": "byzantium",
+    "group": "environmentalinfo",
+    "notes": "A sub context can be creaed with CALL, CALLCODE, DELEGATECALL, or STATICCALL.",
+    "input": {
+      "destOffset": "byte offset in the memory where the result will be copied.",
+      "offset": "byte offset in the return data from the last executed sub context to copy.",
+      "size": "byte size to copy."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nReading offset equal or higher than RETURNDATASIZE.",
+    "gas": {
+      "minimum_word_size": "(size + 31) / 32",
+      "static_gas": "3",
+      "dynamic_gas": "3 * minimum_word_size + memory_expansion_cost"
+    }
+  },
+  {
+    "opcode": "3F",
+    "name": "EXTCODEHASH",
+    "mingas": "100",
+    "since": "constantinople",
+    "group": "environmentalinfo",
+    "input": {
+      "address": "20-byte address of the account."
+    },
+    "output": {
+      "hash": "hash of the chosen account's code, or 0 if the account has no code."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.",
+    "gas": "The static cost is 0. If the accessed address is warm, the dynamic cost is 100. Otherwise the dynamic cost is 2600."
+  },
+  {
+    "opcode": "40",
+    "name": "BLOCKHASH",
+    "mingas": "20",
+    "since": "frontier",
+    "group": "blockinfo",
+    "input": {
+      "blockNumber": "block number to get the hash from. Valid range is the last 256 blocks (not including the current one). Current block number can be queried with NUMBER."
+    },
+    "output": {
+      "hash": "hash of the chosen block, or 0 if the block number is not in the valid range."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "41",
+    "name": "COINBASE",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "blockinfo",
+    "output": {
+      "address": "miner's 20-byte address."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "42",
+    "name": "TIMESTAMP",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "blockinfo",
+    "output": {
+      "timestamp": "unix timestamp of the current block"
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
+  },
+  {
+    "opcode": "43",
+    "name": "NUMBER",
+    "mingas": "2",
+    "since": "frontier",
+    "group": "blockinfo",
+    "output": {
+      "blockNumber": "current block number."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nStack overflow."
   }
 ]
