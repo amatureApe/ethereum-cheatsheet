@@ -2374,5 +2374,28 @@
       "dynamic_gas": "375 * topic_count + 8 * size + memory_expansion_cost",
       "notes": "For LOG4, topic_count is 4."
     }
+  },
+  {
+    "opcode": "F0",
+    "name": "CREATE",
+    "mingas": "32000",
+    "since": "frontier",
+    "group": "systemops",
+    "notes": "Creates a new contract. Enters a new sub context of the calculated destination address and execute the provided initialization code, then resumes the current context.\n\nShould deployment succceed, the new account's code is set to the return data resulting from executing the initialization code.\n\nThe destination address is calculated as the rightmost 20 bytes (160 bits) of the Keccak-256 hash of the rlp encoding of the sender followed by its nonce.\n\naddress = keccak256(rlp([sender_address, sender_nonce]))[12:]\n\nDeployment can fail due to:\n\nInsufficient value to send.\nSub context reverted.\nInsufficient gas to execute the initialization code.\nCall depth limit reached.\n\nThese failures only affect the return value and do not cause the calling context to revert (unlike the error cases below).",
+    "input": {
+      "value": "value in wei to send to the new account.",
+      "offset": "byte offset in the memory in bytes, the initalization code for the new account.",
+      "size": "byte size to copy (size of the initalization code)."
+    },
+    "output": {
+      "address": "the address of the deployed contract, 0 if the deployment failed."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nThe current execution context is from a STATICCALL (since Byzantium fork).",
+    "gas": {
+      "code_deposit_cost": "200 * deployed_code_size",
+      "static_gas": "32000",
+      "dynamic_gas": "memory_expansion_cost + deployment_code_execution_cost + code_deposit_cost",
+      "notes": "The deployment_code_execution_cost is the cost of whatever opcode is run to deploy the new contract. On top of that, there is an additional cost for storing the code of the new contract, shown as the code_deposit_cost.\n\nThe new contract address is added int he warm addresses."
+    }
   }
 ]
