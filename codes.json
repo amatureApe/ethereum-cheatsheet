@@ -1783,5 +1783,596 @@
       "b": "original value."
     },
     "errors": "The state changes done by the current are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nStack overflow."
+  },
+  {
+    "opcode": "90",
+    "name": "SWAP1",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "b": "value to swap."
+    },
+    "output": {
+      "b": "swapped value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "91",
+    "name": "SWAP2",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "b": "ignored value.",
+      "c": "value to swap."
+    },
+    "output": {
+      "c": "swapped value.",
+      "b": "ignored value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "92",
+    "name": "SWAP3",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "b": "value to swap."
+    },
+    "output": {
+      "b": "swapped value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "93",
+    "name": "SWAP4",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "b": "value to swap."
+    },
+    "output": {
+      "b": "swapped value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "94",
+    "name": "SWAP5",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "b": "value to swap."
+    },
+    "output": {
+      "b": "swapped value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "95",
+    "name": "SWAP6",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "b": "value to swap."
+    },
+    "output": {
+      "b": "swapped value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "96",
+    "name": "SWAP7",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "b": "value to swap."
+    },
+    "output": {
+      "b": "swapped value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "97",
+    "name": "SWAP8",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "b": "value to swap."
+    },
+    "output": {
+      "b": "swapped value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "98",
+    "name": "SWAP9",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "b": "value to swap."
+    },
+    "output": {
+      "b": "swapped value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "99",
+    "name": "SWAP10",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "b": "value to swap."
+    },
+    "output": {
+      "b": "swapped value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "9A",
+    "name": "SWAP11",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "b": "value to swap."
+    },
+    "output": {
+      "b": "swapped value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "9B",
+    "name": "SWAP12",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "b": "value to swap."
+    },
+    "output": {
+      "b": "swapped value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "9C",
+    "name": "SWAP13",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "13": "ignored value.",
+      "b": "value to swap."
+    },
+    "output": {
+      "b": "swapped value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "13": "ignored value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "9D",
+    "name": "SWAP14",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "13": "ignored value.",
+      "14": "ignored value.",
+      "b": "value to swap."
+    },
+    "output": {
+      "b": "swapped value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "13": "ignored value.",
+      "14": "ignored value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "9E",
+    "name": "SWAP15",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "13": "ignored value.",
+      "14": "ignored value.",
+      "15": "ignored value.",
+      "b": "value to swap."
+    },
+    "output": {
+      "b": "swapped value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "13": "ignored value.",
+      "14": "ignored value.",
+      "15": "ignored value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "9F",
+    "name": "SWAP16",
+    "mingas": "3",
+    "since": "frontier",
+    "group": "exchangeops",
+    "input": {
+      "a": "value to swap.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "13": "ignored value.",
+      "14": "ignored value.",
+      "15": "ignored value.",
+      "16": "ignored value.",
+      "b": "value to swap."
+    },
+    "output": {
+      "b": "swapped value.",
+      "2": "ignored value.",
+      "3": "ignored value.",
+      "4": "ignored value.",
+      "5": "ignored value.",
+      "6": "ignored value.",
+      "7": "ignored value.",
+      "8": "ignored value.",
+      "9": "ignored value.",
+      "10": "ignored value.",
+      "11": "ignored value.",
+      "12": "ignored value.",
+      "13": "ignored value.",
+      "14": "ignored value.",
+      "15": "ignored value.",
+      "16": "ignored value.",
+      "a": "swapped value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "A0",
+    "name": "LOG0",
+    "mingas": "375",
+    "since": "frontier",
+    "group": "loggingops",
+    "notes": "This instruction has no effect on the EVM state.",
+    "input": {
+      "offset": "byte offset int he memory in bytes.",
+      "size": "byte size to copy."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nThe current execution context is from a STATICCALL (since Byzantium fork).",
+    "gas": {
+      "static_gas": "375",
+      "dynamic_gas": "375 * topic_count + 8 * size + memory_expansion_cost",
+      "notes": "For LOG0, topic_count is 0."
+    }
+  },
+  {
+    "opcode": "A1",
+    "name": "LOG1",
+    "mingas": "750",
+    "since": "frontier",
+    "group": "loggingops",
+    "notes": "This instruction has no effect on the EVM state.",
+    "input": {
+      "offset": "byte offset in the memory in bytes.",
+      "size": "byte size to copy.",
+      "topic1": "32-byte value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nThe current exeuction context is from a STATICCALL (since Byzantium fork).",
+    "gas": {
+      "static_gas": "375",
+      "dynamic_gas": "375 * topic_count + 8 * size + memory_expansion_cost",
+      "notes": "For LOG1, topic_count is 1."
+    }
+  },
+  {
+    "opcode": "A2",
+    "name": "LOG2",
+    "mingas": "1125",
+    "since": "frontier",
+    "group": "loggingops",
+    "notes": "This instruction has no effect on the EVM state.",
+    "input": {
+      "offset": "byte offset in the memory in bytes.",
+      "size": "byte size to copy.",
+      "topic1": "32-byte value.",
+      "topic2": "32-byte value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nThe current exeuction context is from a STATICCALL (since Byzantium fork)."
+  },
+  {
+    "opcode": "A3",
+    "name": "LOG3",
+    "mingas": "1500",
+    "since": "frontier",
+    "group": "loggingops",
+    "notes": "This instruction has no effect on the EVM state.",
+    "input": {
+      "offset": "byte offset in the memory in bytes.",
+      "size": "byte size to copy.",
+      "topic1": "32-byte value.",
+      "topic2": "32-byte value.",
+      "topic3": "32-byte value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nThe current exeuction context is from a STATICCALL (since Byzantium fork).",
+    "gas": {
+      "static_gas": "375",
+      "dynamic_gas": "375 * topic_count + 8 * size + memory_expansion_cost",
+      "notes": "For LOG3, topic_count is 3."
+    }
+  },
+  {
+    "opcode": "A4",
+    "name": "LOG4",
+    "mingas": "1875",
+    "since": "frontier",
+    "group": "loggingops",
+    "notes": "This instruction has no effect on the EVM state.",
+    "input": {
+      "offset": "byte offset in the memory in bytes.",
+      "size": "byte size to copy.",
+      "topic1": "32-byte value.",
+      "topic2": "32-byte value.",
+      "topic3": "32-byte value.",
+      "topic4": "32-byte value."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nThe current exeuction context is from STATICCALL (since Byzantium fork).",
+    "gas": {
+      "static_gas": "375",
+      "dynamic_gas": "375 * topic_count + 8 * size + memory_expansion_cost",
+      "notes": "For LOG4, topic_count is 4."
+    }
   }
 ]
