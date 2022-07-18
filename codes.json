@@ -2397,5 +2397,159 @@
       "dynamic_gas": "memory_expansion_cost + deployment_code_execution_cost + code_deposit_cost",
       "notes": "The deployment_code_execution_cost is the cost of whatever opcode is run to deploy the new contract. On top of that, there is an additional cost for storing the code of the new contract, shown as the code_deposit_cost.\n\nThe new contract address is added int he warm addresses."
     }
+  },
+  {
+    "opcode": "F1",
+    "name": "CALL",
+    "mingas": "100",
+    "since": "frontier",
+    "group": "systemops",
+    "notes": "Creates a new sub context and executes the code of the given account, then resumes the current one. Note that an account with no code will return success as true.\n\nIf the size of the return data is not known, it can also be retrieved after the call with the instructions RETURNDATASIZE and RETURNDATACOPY (since the Byzantium fork).\n\nFrom the Tangerine Whistle fork, gas is capped at all but one 64th (remaining_gas / 64) of the remaining gas of the current context. If a call tries to send more, the gas is changed to match the maximum allowed.",
+    "input": {
+      "gas": "amount of gas to send to the sub context to execute. The gas that is not used by the sub context is returned to this one.",
+      "address": "the account which context to execute.",
+      "value": "value in wei to send to the account.",
+      "argsOffset": "byte offset in the memory in bytes, the calldata of the sub context.",
+      "argsSize": "byte size to copy (size of the calldata).",
+      "retOffset": "byte offset in the memory in bytes, where to store the return data of the sub context.",
+      "retSize": "byte size to copy (size of the return data)."
+    },
+    "output": {
+      "success": "return 0 if the sub context reverts, 1 otherwise."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nThe current execution context is from a STATICCALL and the value (stack index 2) is not 0 (since Byzantium fork)."
+  },
+  {
+    "opcode": "F2",
+    "name": "CALLCODE",
+    "mingas": "100",
+    "since": "frontier",
+    "group": "systemops",
+    "notes": "Creates a new sub context as if calling itself, but with the code of the given account. In particular the storage remains the same. Note that an account with no code will return as true.\n\nIf the size of the return data is not known, it can also be retrieved after the call with the instructions RETURNDATASIZE and RETURNDATACOPY (sinze the Byzantium fork).\n\nFrom the Tangerin Whistle fork, gas is capped at all but one 64th (remaining_gas / 64) of the remaining gas of the current context. If a call tries to send more, the gas is changed to match the maximum allowed.",
+    "input": {
+      "gas": "the amount of gas to send the sub context to execute. The gas that is not used by the sub context is returned to this one.",
+      "address": "the account which code to execute.",
+      "value": "value in wei to send to the account.",
+      "argsOffset": "byte offset in the memory in bytes, the calldata of the sub context.",
+      "argsSize": "byte size to copy (size of the calldata).",
+      "retOffset": "byte offset in the memory in bytes, where to store the return data of the sub context.",
+      "retSize": "byte size copy (size of the return data)."
+    },
+    "output": {
+      "success": "return 0 if the sub context reverts, 1 otherwise."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.",
+    "gas": {
+      "static_gas": "0",
+      "dynamic_gas": "memory_expansion_cost + code_execution_cost + address_access_cost + positive_value_cost",
+      "notes": "The different costs are:\n\ncode_execution_cost is the cost of the called code execution (limited by the gas parameter).\nIf the address is warm, the address_access_cost is 100, otherwise it is 2600.\nIf the value is not 0, then positive_value_cost is 9000. In this case there is also a call stipend that is given to make sure that a basic fallback function can be called. 2300 is thus removed from the cost, and also added to the gas input."
+    }
+  },
+  {
+    "opcode": "F3",
+    "name": "RETURN",
+    "mingas": "0",
+    "since": "frontier",
+    "group": "systemops",
+    "notes": "exits the current context succssfully.",
+    "input": {
+      "offset": "byte offset in the memory in bytes, to copy what will be the return data of this context.",
+      "size": "byte size to copy (size of the return data)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "F4",
+    "name": "DELEGATECALL",
+    "mingas": "100",
+    "since": "byzantium",
+    "group": "systemops",
+    "notes": "Creates a new sub context as if calling itself, but with the code of the given account. In particular the storage, the current sender and the current value remain the same. Note that an account with no code will return success as true.\n\nIf the size of the return data is not known, it can also be retrieved after the call with the instructions RETURNDATASIZE and RETURNDATACOPY (since the Byzantium fork).\n\nFrom the Tangerine Whistle fork, gas is capped at all but one 64th (remaining_gas / 64) of the remaining gas of the current context. If a call tries to send more, the gas is changed to match the maxiumum allowed.",
+    "input": {
+      "gas": "amount of gas to send to the sub context to execute. The gas that is not used by the sub context is returned to this one.",
+      "address": "the account which code to execute.",
+      "argsOffset": "byte offset in the memory in bytes, the calldata of the sub context.",
+      "argsSize": "byte size to copy (size of the calldata).",
+      "retOffset": "byte offset in the memory in bytes, where to store the return data of the sub context.",
+      "retSize": "byte size to copy (size of the return data)."
+    },
+    "output": {
+      "success": "return 0 if the sub context reverts, 1 otherwise."
+    }
+  },
+  {
+    "opcode": "F5",
+    "name": "CREATE2",
+    "mingas": "32000",
+    "since": "constantinople",
+    "group": "systemops",
+    "notes": "Equivalent to CREATE, except the salt allows the new contract to be deployed at a consistent, deterministic address.\n\nShould deployment succeed, the account's code is set to the return data resulting from executing the initialization code.\n\nThe destination address is calculated as follows:\n\ninitialization_code=memory[offset:offset_size]\naddress = keccak256(0xff + sender_address + salt + keccak256(initialization_code))[12:]\n\nDeployment can fail due to:\n\nA contract already exists at the destination\nInsufficient value to transfer.\nSub context reverted.\nInsufficient gas to execute the initialization code.\nCall depth limit reached.\n\nNote that these failures only affect the return value and do not cause the calling context to revert (unlike the error cases below).",
+    "input": {
+      "value": "value in wei to send to the new account.",
+      "offset": "byte offset in the memory in bytes, the initialization code of the new account.",
+      "size": "byte size to copy (size of the initalization code).",
+      "salt": "32-byte value used to create the new account at a deterministic address."
+    },
+    "output": {
+      "address": "the address of the deployment contract, 0 if the deployment failed."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nThe current execution context is from a STATICCALL."
+  },
+  {
+    "opcode": "FA",
+    "name": "STATICCALL",
+    "mingas": "100",
+    "since": "homestead",
+    "group": "systemops",
+    "notes": "Creates a new sub context and executes the code of the given account, then resumes the current one. Note that an account with no code will return success as true (1).\n\nThis instruction is equivalent to CALL, except that it does not allow any state modifying instructions or sending ETH in the sub context. The disallowed instructions are CREATE, CREATE2, LOG0, LOG1, LOG2, LOG3, LOG4, SSTORE, SELFDESTRUCT, and CALL if the value sent is not 0.\n\nIf the size of the return data is not known, it can also be retrieved after the call with the instructions RETURNDATASIZE and RETURNDATACOPY (since the Byzantium fork).\n\nFrom the Tangerine Whistle fork, gas is capped at all but on 64th (remaining_gas / 64) of the remaining gas of the current context. If a call tries to send more, the gas is changed to match the maximum allowed.",
+    "input": {
+      "gas": "amount of gas to send to the sub context to execute. The gas that is not used by the sub context is returned to this one.",
+      "address": "the account which context to execute.",
+      "argsOffset": "byte offset in the memory in bytes, the calldata of the sub context.",
+      "retOffset": "byte offset in the memory in bytes, where to store the return data of the sub context.",
+      "retSize": "byte size to copy (size of the return data)."
+    },
+    "output": {
+      "success": "return 0 if the sub context reverts, 1 otherwise."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.",
+    "gas": {
+      "static_gas": "0",
+      "dynamic_gas": "memory_expansion_cost + code_execution_cost + address_access_cost",
+      "notes": "the different costs are:\n\ncode_exeuction_cost is the cost of the called code execution (limited by the gas parameter).\nIf the address is warm, the address_access_cost is 100, otherwise it is 2600."
+    }
+  },
+  {
+    "opcode": "FD",
+    "name": "REVERT",
+    "mingas": "0",
+    "since": "byzantium",
+    "group": "systemops",
+    "notes": "Stops the current context execution, revert the state changes (see STATICCALL and list the state changing opcodes) and return the unused gas to the caller. It also reverts the gas refund to its value before the current context. If the execution is stopped with REVERT, the value 0 is put on the stack of the calling context, which continues to execute normally. The return data of the calling context is set as the given chunk of memory of this context.",
+    "input": {
+      "offset": "byte offset in the memory in bytes. The return data of the calling context.",
+      "size": "byte size to copy (size of the return data)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack."
+  },
+  {
+    "opcode": "FE",
+    "name": "INVALID",
+    "mingas": "NaN",
+    "since": "homestead",
+    "group": "systemops",
+    "notes": "Equivalent to any other opcode not present in this reference, but guaranteed to remain an invalid instruction. Equivalen to REVERT (since Byzantium fork) with 0,0 as stack parameters, except that all the gas given to current context is consumed."
+  },
+  {
+    "opcode": "FF",
+    "name": "SELFDESTRUCT",
+    "mingas": "5000",
+    "since": "frontier",
+    "group": "systemops",
+    "notes": "The current account is registered to be destroyed, and will be at the end of the current transaction. The transfer of the current balance to the given account cannot fail. In particular, the destination account code (if any) is not executed, or, if the account does not exist, the balance is still added to the given address.",
+    "input": {
+      "address": "account to send the current balance (see BALANCE or SELFBALANCE since Istanbul fork)."
+    },
+    "errors": "The state changes done by the current context are reverted in the following cases:\n\nNot enough gas.\nNot enough values on the stack.\nThe current execution context is from a STATICCALL (since Byzantium fork)."
   }
 ]
