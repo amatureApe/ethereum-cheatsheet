@@ -69,5 +69,245 @@
     "name": "SIGNEXTEND",
     "desc": "extend length of two's complement signed integer",
     "gas": "5"
+  },
+  {
+    "opcode": "0x0c-0x0f",
+    "name": "unused",
+    "desc": "unused"
+  },
+  {
+    "opcode": "0x10",
+    "name": "LT",
+    "desc": "less-than comparison",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x11",
+    "name": "GT",
+    "desc": "greater-than comparison",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x12",
+    "name": "SLT",
+    "desc": "signed less-than comparison",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x13",
+    "name": "SGT",
+    "desc": "signed greater-than comparison",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x14",
+    "name": "EQ",
+    "desc": "equality comparison",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x15",
+    "name": "ISZERO",
+    "desc": "simple not operator",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x16",
+    "name": "AND",
+    "desc": "bitwise AND operation",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x17",
+    "name": "OR",
+    "desc": "bitwise OR operation",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x18",
+    "name": "XOR",
+    "desc": "bitwise XOR operation",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x19",
+    "name": "NOT",
+    "desc": "bitwise NOT operation",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x1a",
+    "name": "BYTE",
+    "desc": "retrieve single byte from word",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x1b",
+    "name": "SHL",
+    "desc": "shift left",
+    "notes": "EIP145",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x1c",
+    "name": "SHR",
+    "desc": "logical shift right",
+    "notes": "EIP145",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x1d",
+    "name": "SAR",
+    "desc": "arithmetic shift right",
+    "notes": "EIP145",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x20",
+    "name": "KECCAK256",
+    "desc": "compute keccak-256 hash",
+    "gas": "30*"
+  },
+  {
+    "opcode": "0x30",
+    "name": "ADDRESS",
+    "desc": "get address of currently executing account",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x31",
+    "name": "BALANCE",
+    "desc": "get balance of the given account",
+    "gas": "700"
+  },
+  {
+    "opcode": "0x32",
+    "name": "ORIGIN",
+    "desc": "get execution origination address",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x33",
+    "name": "CALLER",
+    "desc": "get caller address",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x34",
+    "name": "CALLVALUE",
+    "desc": "get deposited value by the instruction/transaction responsible for this execution",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x35",
+    "name": "CALLDATALOAD",
+    "desc": "get input data of current environment",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x36",
+    "name": "CALLDATASIZE",
+    "desc": "get size of input data in current environment",
+    "gas": "2*"
+  },
+  {
+    "opcode": "0x37",
+    "name": "CALLDATACOPY",
+    "desc": "copy input data in current environment to memory",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x38",
+    "name": "CODESIZE",
+    "desc": "get size of code running in current environment",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x39",
+    "name": "CODECOPY",
+    "desc": "copy code running in current environment to memory",
+    "gas": "3*"
+  },
+  {
+    "opcode": "0x3a",
+    "name": "GASPRICE",
+    "desc": "get price of gas in current environment",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x3b",
+    "name": "EXTCODESIZE",
+    "desc": "get size of an account's code",
+    "gas": "700"
+  },
+  {
+    "opcode": "0x3c",
+    "name": "EXTCODECOPY",
+    "desc": "copy an account's code to memory",
+    "gas": "700*"
+  },
+  {
+    "opcode": "0x3d",
+    "name": "RETURNDATASIZE",
+    "desc": "pushes the size of the return data buffer onto the stack",
+    "notes": "EIP211",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x3e",
+    "name": "RETURNDATACOPY",
+    "desc": "copies data from the return data buffer to memory",
+    "notes": "EIP211",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x3f",
+    "name": "EXTCODEHASH",
+    "desc": "returns the keccak256 hash of a contract's code",
+    "notes": "EIP 1052",
+    "gas": "700"
+  },
+  {
+    "opcode": "0x40",
+    "name": "BLOCKHASH",
+    "desc": "get the hash of one of the 256 most recent complete blocks",
+    "gas": "20"
+  },
+  {
+    "opcode": "0x41",
+    "name": "COINBASE",
+    "desc": "get the block's beneificiary address",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x42",
+    "name": "TIMESTAMP",
+    "desc": "get the block's timestamp",
+    "gas": "2",
+  },
+  {
+    "opcode": "0x43",
+    "name": "NUMBER",
+    "desc": "get the block's number",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x44",
+    "name": "DIFFICULTY",
+    "desc": "get the block's difficulty",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x45",
+    "name": "GASLIMIT",
+    "desc": "get the block's gas limit",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x46",
+    "name": "CHAINID",
+    "desc": "returns the current chain's eip-155 unique identifier",
+    "notes": "EIP1344",
+    "gas": "2"
   }
 ]
