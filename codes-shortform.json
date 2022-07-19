@@ -1,0 +1,73 @@
+[
+  {
+    "opcode": "0x00",
+    "name": "STOP",
+    "desc": "halts execution",
+    "gas": "0"
+  },
+  {
+    "opcode": "0x01",
+    "name": "ADD",
+    "desc": "addition operation"
+  },
+  {
+    "opcode": "0x02",
+    "name": "MUL",
+    "desc": "multiplication operation",
+    "gas": "5"
+  },
+  {
+    "opcode": "0x03",
+    "name": "SUB",
+    "desc": "subtraction operation",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x04",
+    "name": "DIV",
+    "desc": "integer division operation",
+    "gas": "5"
+  },
+  {
+    "opcode": "0x05",
+    "name": "SDIV",
+    "desc": "signed integer division operation (truncated)",
+    "gas": "5"
+  },
+  {
+    "opcode": "0x06",
+    "name": "MOD",
+    "desc": "modulo remainder operation",
+    "gas": "5"
+  },
+  {
+    "opcode": "0x07",
+    "name": "SMOD",
+    "desc": "signed modulo remainder operation",
+    "gas": "5"
+  },
+  {
+    "opcode": "0x08",
+    "name": "ADDMOD",
+    "desc": "modulo addition operation",
+    "gas": "8"
+  },
+  {
+    "opcode": "0x09",
+    "name": "MULMOD",
+    "desc": "modulo multiplication operation",
+    "gas": "8"
+  },
+  {
+    "opcode": "0x0a",
+    "name": "EXP",
+    "desc": "exponential operation",
+    "gas": "10*"
+  },
+  {
+    "opcode": "0x0b",
+    "name": "SIGNEXTEND",
+    "desc": "extend length of two's complement signed integer",
+    "gas": "5"
+  }
+]
