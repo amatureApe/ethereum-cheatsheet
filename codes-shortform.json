@@ -309,5 +309,106 @@
     "desc": "returns the current chain's eip-155 unique identifier",
     "notes": "EIP1344",
     "gas": "2"
+  },
+  {
+    "opcode": "0x47-0x4f",
+    "name": "unused",
+    "desc": "unused"
+  },
+  {
+    "opcode": "0x48",
+    "name": "BASEFEE",
+    "desc": "returns the value of the base fee of the current block it is executing in.",
+    "notes": "EIP3198",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x50",
+    "name": "POP",
+    "desc": "remove word from stack",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x51",
+    "name": "MLOAD",
+    "desc": "load word from memory",
+    "gas": "3*"
+  },
+  {
+    "opcode": "0x52",
+    "name": "MSTORE",
+    "desc": "save word from memory.",
+    "gas ": "3*"
+  },
+  {
+    "opcode": "0x53",
+    "name": "MSTORE8",
+    "desc": "save byte to memory.",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x54",
+    "name": "SLOAD",
+    "desc": "load word from storage.",
+    "gas": "800"
+  },
+  {
+    "opcode": "0x55",
+    "name": "SSTORE",
+    "desc": "save word to storage.",
+    "gas": "20000**"
+  },
+  {
+    "opcode": "0x56",
+    "name": "JUMP",
+    "desc": "alter the program counter",
+    "gas": "8"
+  },
+  {
+    "opcode": "0x57",
+    "name": "JUMPI",
+    "desc": "conditionally alter the program counter",
+    "gas": "10"
+  },
+  {
+    "opcode": "0x58",
+    "name": "GETPC",
+    "desc": "get the value of the program counter prior to the increment",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x59",
+    "name": "MSIZE",
+    "desc": "get the size of the active memory in bytes.",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x5a",
+    "name": "GAS",
+    "desc": "get the amount of available gas, including the corresponding reduction for the cost of this instruction.",
+    "gas": "2"
+  },
+  {
+    "opcode": "0x5b",
+    "name": "JUMPDEST",
+    "desc": "mark a valid destination for jumps",
+    "gas": "1"
+  },
+  {
+    "opcode": "0x5c-ox5f",
+    "name": "unused",
+    "desc": "unused"
+  },
+  {
+    "opcode": "0x60",
+    "name": "PUSH1",
+    "desc": "place 1 byte item on stack",
+    "gas": "3"
+  },
+  {
+    "opcode": "0x61",
+    "name": "PUSH2",
+    "desc": "place 2-byte item on stack",
+    "gas": "3"
   }
 ]
