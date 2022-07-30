@@ -1,0 +1,107 @@
+[
+  {
+    "func": "abi.decode(bytes memory encodedData, (...)) returns (...)",
+    "description": "ABI-decodes the provided data. The types are given in parentheses as second argument.",
+    "example": "(uint a, uint[2] memory b, bytes memory c) = abi.decode(data, (uint, uint[2], bytes))"
+  },
+  {
+    "func": "abi.encode(...) returns (bytes memory)",
+    "description": "ABI-encodes the given arguments"
+  },
+  {
+    "func": "abi.encodePacked(...) returns (bytes memory)",
+    "description": "performs packed encoding of the given arguments. Note that this encoding can be amibguous."
+  },
+  {
+    "func": "abi.encodeWithSelector(bytes4 selector, ...) returns (bytes memory)",
+    "description": "ABI-encodes the given arguments starting from the second and prepends the given four-byte selector"
+  },
+  {
+    "func": "abi.encodeCall(function functionPointer, (...)) returns (bytes memory)",
+    "description": "ABI-encodes a call to functionPointer with the arguments found the tuple. Performs a full type-check, ensuring the types match the function signature. Result equals abi.encodeWithSelector(functionPointer.selector, (...))"
+  },
+  {
+    "func": "abi.encodeWithSignature(string memory signature, ...) returns (bytes memory)",
+    "description": "Equivalent to abi.encodeWithSelector(bytes4(keccak256(bytes(signature)), ...)"
+  },
+  {
+    "func": "bytes.concat(...) returns (bytes memory)",
+    "description": "Concatenates variable number of arguments to one byte array"
+  },
+  {
+    "func": "string.concat(...) returns (string memory)",
+    "description": "Concatenates variable number of arguments to one string array"
+  },
+  {
+    "func": "block.basefee(uint)",
+    "description": "current block's base fee (EIP-3198 and EIP-1559)"
+  },
+  {
+    "func": "block.chainid(uint)",
+    "description": "current chain id"
+  },
+  {
+    "func": "block.coinbase(address payable)",
+    "description": "current block miner's address"
+  },
+  {
+    "func": "block.difficulty(uint)",
+    "description": "current block difficulty"
+  },
+  {
+    "func": "block.gaslimit(uint)",
+    "description": "current block gaslimit"
+  },
+  {
+    "func": "block.number(uint)",
+    "description": "current block number"
+  },
+  {
+    "func": "gasleft() returns (uint256)",
+    "description": "remaining gas"
+  },
+  {
+    "func": "msg.data(bytes)",
+    "description": "complete calldata"
+  },
+  {
+    "func": "msg.sender(address)",
+    "description": "sender of the message (current call)"
+  },
+  {
+    "func": "msg.sig(bytes4)",
+    "description": "first four bytes of the calldata (i.e. function identifier)"
+  },
+  {
+    "func": "msg.value(uint)",
+    "description": "number of wei sent with the message"
+  },
+  {
+    "func": "tx.gasprice(uint)",
+    "description": "gas price of the transaction"
+  },
+  {
+    "func": "tx.origin(address)",
+    "description": "sender of the transaction (full call chain)"
+  },
+  {
+    "func": "assert(bool condition)",
+    "description": "abort execution and revert state changes if condition is false (use for internal error)"
+  },
+  {
+    "func": "require(bool condition, string memory message)",
+    "description": "abort execution and revert changes if the condition is false (use for malformed input or error in external component). Also provide error message."
+  },
+  {
+    "func": "revert()",
+    "description": "abort execution and revert state changes"
+  },
+  {
+    "func": "revert(string memory message)",
+    "description": "abort execution and revert state changes providing an explanatory string"
+  },
+  {
+    "func": "blockhash(uint blockNumber) returns (bytes32)",
+    "description": "hash of the given block - only works for 256 most recent blocks"
+  }
+]
