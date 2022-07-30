@@ -1,0 +1,163 @@
+[
+  {
+    "operator": [
+      "++",
+      "--"
+    ],
+    "description": "postfix increment and decrement",
+    "precedence": "1"
+  },
+  {
+    "operator": "new <typename>",
+    "description": "new expression",
+    "precedence": "1"
+  },
+  {
+    "operator": "<array>[<index>]",
+    "description": "array subscription",
+    "precedence": "1"
+  },
+  {
+    "operator": "<object>.<member>",
+    "description": "member access",
+    "precedence": "1"
+  },
+  {
+    "operator": "<func>(<args...>)",
+    "description": "function-like call",
+    "precedence": "1"
+  },
+  {
+    "operator": "(<statement>)",
+    "description": "parentheses",
+    "precedence": "1"
+  },
+  {
+    "operator": [
+      "++",
+      "--"
+    ],
+    "description": "prefix increment and decrement",
+    "precedence": "2"
+  },
+  {
+    "operator": "-",
+    "description": "unary minus",
+    "precedence": "2"
+  },
+  {
+    "operator": "delete",
+    "description": "unary operations",
+    "precedence": "2"
+  },
+  {
+    "operator": "!",
+    "description": "logical NOT",
+    "precedence": "2"
+  },
+  {
+    "operator": "~",
+    "description": "bitwise not",
+    "precedence": "2"
+  },
+  {
+    "operator": "**",
+    "description": "exponentiation",
+    "precedence": "3"
+  },
+  {
+    "operator": [
+      "*",
+      "/",
+      "%"
+    ],
+    "description": "multiplication, division, modulo",
+    "precedence": "4"
+  },
+  {
+    "operator": [
+      "+",
+      "-"
+    ],
+    "description": "addition and subtraction",
+    "precedence": "5"
+  },
+  {
+    "operator": [
+      "<<",
+      ">>"
+    ],
+    "description": "bitwise shift operators",
+    "precedence": "6"
+  },
+  {
+    "operator": "&",
+    "description": "bitwise AND",
+    "precedence": "7"
+  },
+  {
+    "operator": "^",
+    "description": "bitwise XOR",
+    "precedence": "8"
+  },
+  {
+    "operator": "|",
+    "description": "bitwise OR",
+    "precedence": "9"
+  },
+  {
+    "operator": [
+      "<",
+      ">",
+      "<=",
+      ">="
+    ],
+    "description": "inequality operators",
+    "precedence": "10"
+  },
+  {
+    "operator": [
+      "==",
+      "!="
+    ],
+    "description": "equality operators",
+    "precedence": "11"
+  },
+  {
+    "operator": "&&",
+    "description": "logical AND",
+    "precedence": "12"
+  },
+  {
+    "operator": "||",
+    "description": "logical OR",
+    "precedence": "13"
+  },
+  {
+    "operator": "<conditional> ? <if-true> : <if-false>",
+    "description": "ternary operator",
+    "precedence": "14"
+  },
+  {
+    "operator": [
+      "=",
+      "|=",
+      "^=",
+      "&=",
+      "<<=",
+      ">>=",
+      "+=",
+      "-=",
+      "*=",
+      "/=",
+      "%="
+    ],
+    "description": "assignment operators",
+    "precedence": "14"
+  },
+  {
+    "operator": ",",
+    "description": "comma operator",
+    "precedence": "15"
+  }
+]
