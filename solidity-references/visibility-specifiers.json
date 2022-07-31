@@ -1,0 +1,18 @@
+[
+  {
+    "name": "public",
+    "description": "visible externally and internally (creates a getter function for storage/state variables)"
+  },
+  {
+    "name": "private",
+    "description": "only visible in the current contract"
+  },
+  {
+    "name": "external",
+    "description": "only visible externally (only for functions) - i.e. can only be message-called (via this.func)"
+  },
+  {
+    "name": "internal",
+    "description": "only visible internally"
+  }
+]
