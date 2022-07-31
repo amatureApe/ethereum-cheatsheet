@@ -1,0 +1,54 @@
+[
+  {
+    "name": "pure",
+    "usage": "functions",
+    "description": "disallows modification or access of state"
+  },
+  {
+    "name": "view",
+    "usage": "functions",
+    "description": "disallows modification of state"
+  },
+  {
+    "name": "payable",
+    "usage": "functions",
+    "description": "allows a function to receive ether together with a call"
+  },
+  {
+    "name": "constant",
+    "usage": "state variables",
+    "description": "disallows assignment (except for initialization), does not occupy storage slot"
+  },
+  {
+    "name": "immutable",
+    "usage": "state variables",
+    "description": "allows exactly one assignment at construction time and is constant afterwards. is stored in code"
+  },
+  {
+    "name": "anonymous",
+    "usage": "events",
+    "description": "does not store event signature as topic"
+  },
+  {
+    "name": "indexed",
+    "usage": "events",
+    "description": "stores the parameter as topic"
+  },
+  {
+    "name": "virtual",
+    "usage": [
+      "functions",
+      "modifiers"
+    ],
+    "description": "allows the function's or modifier's behavior to be changed in the derived contracts"
+  },
+  {
+    "name": "override",
+    "usage": [
+      "functions",
+      "modifiers",
+      "state variables"
+    ],
+    "description": "states that this function, modifier, or public state variable changes the behavior of a function or modifier in the base contract"
+  }
+]
