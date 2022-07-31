@@ -103,5 +103,85 @@
   {
     "func": "blockhash(uint blockNumber) returns (bytes32)",
     "description": "hash of the given block - only works for 256 most recent blocks"
+  },
+  {
+    "func": "keccak256(bytes memory) returns (bytes32)",
+    "description": "compute the keccak-256 hash of the input"
+  },
+  {
+    "func": "sha2556(bytes memory) returns (bytes32)",
+    "description": "compute the sha-256 hash of the input"
+  },
+  {
+    "func": "ripemd160(bytes memory) returns (bytes20)",
+    "description": "compute the ripemd-160 hash of the input"
+  },
+  {
+    "func": "ecrecover(bytes 32 hash, uint8 v, bytes32 r, bytes32 s) returns (address)",
+    "description": "recover address associated with the public key from elliptic curve signature, return zero on error"
+  },
+  {
+    "func": "addmod(uint x, uint y, uint k) returns (uint)",
+    "description": "compute (x + y) % k where the addition is performed with arbitrary precision and does not wrap around at 2**256. assert that k != 0 starting from version 0.5.0"
+  },
+  {
+    "func": "mulmod(uint x, uint y, uint k) returns (uint)",
+    "description": "compute (x * y) % k where the multiplication is performed with arbitrary precision and does not wrap around at 2**256. assert that k != 0 starting from version 0.5.0"
+  },
+  {
+    "func": "this (current contract's type)",
+    "description": "the current contract, explicitly convertible to address or address payable"
+  },
+  {
+    "func": "super",
+    "description": "the contract one level higher in the inheritance hierarchy"
+  },
+  {
+    "func": "selfdestruct(address payable recipient)",
+    "description": "destroy the current contract, sending its funds to the given address"
+  },
+  {
+    "func": "<address>.balance(uint256)",
+    "description": "balance of the address in wei"
+  },
+  {
+    "func": "<address>.code(bytes memory)",
+    "description": "code at the address (can be empty)"
+  },
+  {
+    "func": "<address>.codehash(bytes32)",
+    "description": "the codehash of the address"
+  },
+  {
+    "func": "<address payable>.send(uint256 amount) returns (bool)",
+    "description": "send given amount of wei to address, returns false on failure"
+  },
+  {
+    "func": "<address payable>.transfer(uint256 amount)",
+    "description": "send given amount of wei to address, throws on failure"
+  },
+  {
+    "func": "type(C).name(string)",
+    "description": "the name of the contract"
+  },
+  {
+    "func": "type(C).creationCode(bytes memory)",
+    "description": "creation bytecode of the given contract"
+  },
+  {
+    "func": "type(C).runtimeCode(bytes memory)",
+    "description": "runtime bytecode of the given contract"
+  },
+  {
+    "func": "type(I).interfaceId(bytes4)",
+    "description": "value containing the EIP-165 interface identifier of the given interface"
+  },
+  {
+    "func": "type(T).min(T)",
+    "description": "the minimum value representable by the integer type T"
+  },
+  {
+    "func": "type(T).max(T)",
+    "description": "the maximum value representable by the integer type T"
   }
 ]
