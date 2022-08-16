@@ -33,12 +33,10 @@ contract DataLocations {
     }
 
     function set(address _addr, string calldata _text) external {
-        // Write your code here
         myStructs[_addr].text = _text;
     }
 
     function get(address _addr) external view returns (string memory) {
-        // Write your code here
         return myStructs[_addr].text;
     }
 }

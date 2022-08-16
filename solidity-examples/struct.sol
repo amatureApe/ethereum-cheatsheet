@@ -49,12 +49,10 @@ contract StructExamples {
             address owner
         )
     {
-        // Write your code here
         return (cars[_index].model, cars[_index].year, cars[_index].owner);
     }
 
     function transfer(uint256 _index, address _owner) external {
-        // Write your code here
         cars[_index].owner = _owner;
     }
 }

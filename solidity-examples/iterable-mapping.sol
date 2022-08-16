@@ -21,13 +21,11 @@ contract IterableMapping {
     }
 
     function first() external view returns (uint256) {
-        // Write your code here
         address key = keys[0];
         return balances[key];
     }
 
     function last() external view returns (uint256) {
-        // Write your code here
         address key = keys[keys.length - 1];
         return balances[key];
     }
