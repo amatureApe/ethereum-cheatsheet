@@ -7,7 +7,7 @@ contract HashFunc {
         uint256 _num,
         address _addr
     ) external pure returns (bytes32) {
-        return keccack(abi.encodePacked(_text, _num, _addr));
+        return keccak256(abi.encodePacked(_text, _num, _addr));
     }
 
     function getHash(address _addr, uint256 _num)
@@ -15,6 +15,6 @@ contract HashFunc {
         pure
         returns (bytes32)
     {
-        return keccack256(abi.encodePacked(_addr, _num));
+        return keccak256(abi.encodePacked(_addr, _num));
     }
 }
