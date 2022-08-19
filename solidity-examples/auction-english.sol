@@ -52,7 +52,7 @@ contract EnglishAuction {
     }
 
     function bid() external payable {
-        require(started, "auction not started");
+        require(started, " auction not started");
         require(!ended, "auction ended");
         require(msg.value > highestBid, "bid too low");
 
