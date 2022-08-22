@@ -38,7 +38,7 @@ contract CrowdFund {
     uint256 public count;
     // Mapping from id to Campaign
     mapping(uint256 => Campaign) public campaigns;
-    // Mapping from campaing id => pledger => amount pledged
+    // Mapping from campaign id => pledger => amount pledged
     mapping(uint256 => mapping(address => uint256)) public pledgedAmount;
 
     constructor(address _token) {
@@ -55,8 +55,8 @@ contract CrowdFund {
         require(_endAt <= block.timestamp + 90 days, "too long");
         count += 1;
         campaigns[count] = Campaign({
-            creator: msg.sender.
-            goal: _goal.
+            creator: msg.sender,
+            goal: _goal,
             pledged: 0,
             startAt: _startAt,
             endAt: _endAt,
@@ -106,7 +106,20 @@ contract CrowdFund {
         require(campaign.claimed == false, "already claimed");
 
         campaign.claimed = true;
-        token.transfer(campaing.creator, campaign.pledged);
+        token.transfer(campaign.creator, campaign.pledged);
         emit Claim(_id);
+    }
+
+    function refund(uint256 _id) external {
+        Campaign storage campaign = campaigns[_id];
+        require(block.timestamp >= campaign.endAt, "not ended");
+        require(campaign.pledged < campaign.goal);
+
+        uint256 bal = pledgedAmount[_id][msg.sender];
+
+        pledgedAmount[_id][msg.sender] = 0;
+        token.transfer(msg.sender, bal);
+
+        emit Refund(_id, msg.sender, bal);
     }
 }
