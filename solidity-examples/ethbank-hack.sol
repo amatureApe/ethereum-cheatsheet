@@ -71,23 +71,26 @@ contract ERC20Bank {
     }
 }
 
-interface IERC20Bank {
-    function deposit(uint256 _amount) external;
+// import "./IERC20Permit.sol";
+// import "./ERC20.sol";
 
-    function withdraw(uint256 _amount) external;
+// interface IERC20Bank {
+//     function deposit(uint256 _amount) external;
 
-    function token() external view returns (address);
+//     function withdraw(uint256 _amount) external;
 
-    function depositWithPermit(
-        address owner,
-        address spender,
-        uint256 amount,
-        uint256 deadline,
-        uint8 v,
-        bytes32 r,
-        bytes32 s
-    ) external;
-}
+//     function token() external view returns (address);
+
+//     function depositWithPermit(
+//         address owner,
+//         address spender,
+//         uint256 amount,
+//         uint256 deadline,
+//         uint8 v,
+//         bytes32 r,
+//         bytes32 s
+//     ) external;
+// }
 
 contract ERC20BankExploit {
     address private immutable target;
