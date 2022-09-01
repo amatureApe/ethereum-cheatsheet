@@ -55,7 +55,7 @@ contract UniswapV2SingleHopSwap {
         );
 
         // Refund WETH to msg.sender
-        if (amount[0] < amountInMax) {
+        if (amounts[0] < amountInMax) {
             weth.transfer(msg.sender, amountInMax - amounts[0]);
         }
     }
