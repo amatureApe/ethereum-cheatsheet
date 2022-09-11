@@ -26,7 +26,7 @@ contract StakingRewards {
 
     // Total staked
     uint256 public totalSupply;
-    // User addresss => staked amount
+    // User address => staked amount
     mapping(address => uint256) public balanceOf;
 
     constructor(address _stakingToken, address _rewardsToken) {
@@ -46,7 +46,7 @@ contract StakingRewards {
 
         if (_account != address(0)) {
             rewards[_account] = earned(_account);
-            userRewardPerTokenPaid[_account] = rewardPerTokenPaid;
+            userRewardPerTokenPaid[_account] = rewardPerTokenStored;
         }
         _;
     }
@@ -76,8 +76,8 @@ contract StakingRewards {
 
     function withdraw(uint256 _amount) external updateReward(msg.sender) {
         require(_amount > 0, "amount == 0");
-        balanceOf[msg.sender] -= amount;
-        totalSupply -= amount;
+        balanceOf[msg.sender] -= _amount;
+        totalSupply -= _amount;
         stakingToken.transfer(msg.sender, _amount);
     }
 
@@ -85,10 +85,10 @@ contract StakingRewards {
         return
             ((balanceOf[_account] *
                 (rewardPerToken() - userRewardPerTokenPaid[_account])) / 1e18) +
-            reward[_account];
+            rewards[_account];
     }
 
-    function getReward() external updateRewards(msg.sender) {
+    function getReward() external updateReward(msg.sender) {
         uint256 _bal = rewards[msg.sender];
         if (_bal > 0) {
             rewards[msg.sender] = 0;
@@ -98,7 +98,7 @@ contract StakingRewards {
 
     function setRewardsDuration(uint256 _duration) external onlyOwner {
         require(block.timestamp > finishAt, "Expired");
-        duration _duration;
+        duration = _duration;
     }
 
     function notifyRewardAmount(uint256 _amount)
