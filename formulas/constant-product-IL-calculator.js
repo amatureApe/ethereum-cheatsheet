@@ -1,7 +1,7 @@
 /*
 This function calculates impermanent loss of a
 liquidity pair, given a price movement of d, in a constant
-sum LP.
+product LP.
 
 For a given price of two tokens, the price
 of token A being given in token B, this formula will
