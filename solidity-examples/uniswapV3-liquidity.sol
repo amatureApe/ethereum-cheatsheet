@@ -33,11 +33,10 @@ contract UniswapV3Liquidity is IERC721Receiver {
     function mint(uint256 amount0ToAdd, uint256 amount1ToAdd) external {
         dai.transferFrom(msg.sender, address(this), amount0ToAdd);
         weth.transferFrom(msg.sender, address(this), amount1ToAdd);
-
         dai.approve(address(manager), amount0ToAdd);
         weth.approve(address(manager), amount1ToAdd);
 
-        int24 tickLower = (MIX_TICK / TICK_SPACING) * TICK_SPACING;
+        int24 tickLower = (MIN_TICK / TICK_SPACING) * TICK_SPACING;
         int24 tickUpper = (MAX_TICK / TICK_SPACING) * TICK_SPACING;
 
         INonfungiblePositionManager.MintParams

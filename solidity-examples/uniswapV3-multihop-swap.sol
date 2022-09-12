@@ -1,9 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
-// Import and use hardhat/console.sol to debug your contract
-// import "hardhat/console.sol";
-
 import "./IERC20.sol";
 import "./ISwapRouter.sol";
 
