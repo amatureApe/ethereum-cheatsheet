@@ -20,7 +20,7 @@ contract CSAMM {
         token1 = IERC20(_token1);
     }
 
-    function _mint(address _to, uint256 _amount) public {
+    function _mint(address _to, uint256 _amount) private {
         balanceOf[_to] += _amount;
         totalSupply += _amount;
     }
